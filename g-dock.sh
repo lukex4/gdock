@@ -11,11 +11,11 @@
 #
 # To run:
 #
-# ./gcloud-autodeploy.sh GCLOUD_PROJECTID PROJECT_NAME GCP_SERVICEACCOUNT FQDN GDNS_ZONENAME
+# ./g-dock.sh GCLOUD_PROJECTID PROJECT_NAME GCP_SERVICEACCOUNT FQDN GDNS_ZONENAME
 #
 # e.g:
 #
-# ./gcloud-autodeploy.sh personal-201216 billing-core 29112554465-compute@developer.gserviceaccount.com dev.italkincode.com i-talk-in-code
+# ./g-dock.sh personal-201216 billing-core 29112554465-compute@developer.gserviceaccount.com dev.italkincode.com i-talk-in-code
 #
 # This example should result in the Docker image being deployed to GCP, accessible via the FQDN: http://billing-core.dev.italkincode.com.
 #

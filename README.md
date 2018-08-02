@@ -6,6 +6,14 @@ You'll need to set up the Google Cloud and all that stuff. Just read the Dockerf
 
 G-dock should be cloned into a directory alongside a directory named 'root' containing all of your site/app files.
 
+## Prerequisites
+
+- Docker
+- gcloud CLI
+- Etc.
+
+## Manual execution
+
 To run:
 
 ```
