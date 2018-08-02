@@ -31,7 +31,7 @@ FQDN=$4
 GDNS_ZONENAME=$5
 
 ## LOCAL
-docker-compose up --build
+#docker-compose up --build
 
 # Delete the last image that might be in place
 docker rm -f gcr.io/$GCLOUD_PROJECTID/$PROJECT_NAME:0.0.1

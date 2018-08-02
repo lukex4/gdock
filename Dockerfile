@@ -66,7 +66,7 @@ RUN a2enmod rewrite
 EXPOSE 80
 
 RUN mkdir -p /var/www
-COPY ../root /var/www
+COPY . /var/www
 
 CMD /usr/sbin/apache2ctl -D FOREGROUND
 WORKDIR /var/www

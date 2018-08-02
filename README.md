@@ -1,10 +1,10 @@
 # G-DOCK
 
-You need the Dockerfile, docker-compose.yml, apache.conf, and g-dock.sh in the root. Your website files should be in /public.
+You need the Dockerfile, docker-compose.yml, apache.conf, and g-dock.sh in the root.
 
-You'll need to set up the Google Cloud and all that stuff. Just read the Dockerfile and g-dock.sh if you wish.
+You'll need to set up the Google Cloud and all that stuff. Just read the Dockerfile and g-dock.sh if you wish. I will re-write this to explain prerequisites later.
 
-G-dock should be cloned into a directory alongside a directory named 'root' containing all of your site/app files.
+g-dock should be placed and run from inside the same directory as your web/app.
 
 ## Prerequisites
 
