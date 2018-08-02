@@ -68,5 +68,7 @@ EXPOSE 80
 RUN mkdir -p /var/www
 COPY . /var/www
 
+RUN chown -R www-data:www-data /var/www
+
 CMD /usr/sbin/apache2ctl -D FOREGROUND
 WORKDIR /var/www

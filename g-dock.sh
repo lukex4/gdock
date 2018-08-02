@@ -11,24 +11,19 @@
 #
 # To run:
 #
-# ./g-dock.sh GCLOUD_PROJECTID PROJECT_NAME GCP_SERVICEACCOUNT FQDN GDNS_ZONENAME
+# Set the environment variables in .env-gdock, then when ready to compile, push to Google Compute and launch your Docker image, run ./g-dock.sh in the directory of your app/website.
 #
-# e.g:
-#
-# ./g-dock.sh personal-201216 billing-core 29112554465-compute@developer.gserviceaccount.com dev.italkincode.com i-talk-in-code
-#
-# This example should result in the Docker image being deployed to GCP, accessible via the FQDN: http://billing-core.dev.italkincode.com.
-#
+# The script will, if successful, return the URL of the new instance.
 #
 
-## TODO: Move these variables to a .env or equivalent file
+# Load environment variables
+source .env-gdock
 
-
-GCLOUD_PROJECTID=$1
-PROJECT_NAME=$2
-GCP_SERVICEACCOUNT=$3
-FQDN=$4
-GDNS_ZONENAME=$5
+#GCLOUD_PROJECTID=$1
+#PROJECT_NAME=$2
+#GCP_SERVICEACCOUNT=$3
+#FQDN=$4
+#GDNS_ZONENAME=$5
 
 ## LOCAL
 #docker-compose up --build
