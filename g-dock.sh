@@ -26,10 +26,6 @@ source .env-gdock
 #GDNS_ZONENAME=$5
 
 ## LOCAL
-#docker-compose up --build
-
-# Delete the last image that might be in place
-docker rm -f gcr.io/$GCLOUD_PROJECTID/$PROJECT_NAME:0.0.1
 
 # Docker build the image
 docker build -t gcr.io/$GCLOUD_PROJECTID/$PROJECT_NAME:0.0.1 .
@@ -42,6 +38,9 @@ gcloud beta container images delete gcr.io/$GCLOUD_PROJECTID/$PROJECT_NAME --for
 
 # Create the new container with this Docker image
 gcloud docker -- push gcr.io/$GCLOUD_PROJECTID/$PROJECT_NAME:0.0.1
+
+# Delete an existing VM if one exists for this PROJECT_NAME
+gcloud beta compute instances delete $PROJECT_NAME
 
 # Launch a new VM based on the newly pushed container
 gcloud beta compute instances create-with-container $PROJECT_NAME --container-image gcr.io/$GCLOUD_PROJECTID/$PROJECT_NAME:0.0.1 --machine-type g1-small --tags http-server --service-account=$GCP_SERVICEACCOUNT --format=json
