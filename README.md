@@ -12,6 +12,10 @@ g-dock should be placed and run from inside the same directory as your web/app.
 - gcloud CLI
 - Etc.
 
+## Warning about existing images
+
+As this workflow is designed purely for development purposes, gdock will kill and delete and existing Docker containers and GCP VMs, as well as the copy of the image in the GCP Container Registry. Running this completely wipes out what was there before and replaces it with a running version of your latest code.
+
 ## Manual execution
 
 To run:
