@@ -59,7 +59,7 @@ NEW_ARECORD="$PROJECT_NAME.$FQDN."
 
 ## TODO: Remove any previous A records for this new sub-domain
 gcloud dns record-sets transaction start -z=$GDNS_ZONENAME
-#gcloud dns record-sets transaction remove --name=$NEW_ARECORD --type=A -z=$GDNS_ZONENAME
+gcloud dns record-sets transaction remove --name=$NEW_ARECORD --type=A -z=$GDNS_ZONENAME --ttl=300
 gcloud dns record-sets transaction add -z=$GDNS_ZONENAME --name=$NEW_ARECORD --type=A --ttl=300 $NEWVM_IP
 gcloud dns record-sets transaction execute -z=$GDNS_ZONENAME
 
