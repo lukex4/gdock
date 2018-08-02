@@ -49,7 +49,7 @@ gcloud beta container images delete gcr.io/$GCLOUD_PROJECTID/$PROJECT_NAME --for
 gcloud docker -- push gcr.io/$GCLOUD_PROJECTID/$PROJECT_NAME:0.0.1
 
 # Launch a new VM based on the newly pushed container
-gcloud beta compute instaces create-with-container $PROJECT_NAME --container-image gcr.io/$GCLOUD_PROJECTID/$PROJECT_NAME:0.0.1 --machine-type g1-small --tags http-server --service-acount=$GCP_SERVICEACCOUNT --format=json
+gcloud beta compute instances create-with-container $PROJECT_NAME --container-image gcr.io/$GCLOUD_PROJECTID/$PROJECT_NAME:0.0.1 --machine-type g1-small --tags http-server --service-acount=$GCP_SERVICEACCOUNT --format=json
 
 # Make the IP of this new VM available in the script
 export NEWVM_IP=$(gcloud beta compute instances describe $PROJECT_NAME --format=json | grep natIP | tr -d '""' | tr -d 'natIP' | tr -d ': ' | tr -d ',' | tr -d ' ')
